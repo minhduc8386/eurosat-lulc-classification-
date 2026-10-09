@@ -1,21 +1,20 @@
-# Dataset – mỗi người tự tải (xem data/README.md), chỉ giữ splits.csv
+# Dataset – downloaded by src/01_data_preprocessing.py (see data/README.md); only splits.csv is tracked
 data/*
 !data/README.md
 !data/splits.csv
 *.zip
 
-# Model đã train – lưu trên Google Drive (xem models/README.md)
+# Trained models – too large for GitHub (see models/README.md)
 models/*
 !models/README.md
 *.keras
 *.h5
 
-# Python / Jupyter
+# Python
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
 
-# Môi trường & hệ điều hành
+# Environment and OS files
 .venv/
 venv/
 .env
