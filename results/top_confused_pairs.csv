@@ -1,0 +1,6 @@
+True class,Predicted as,Rate
+Highway,River,0.0373
+PermanentCrop,HerbaceousVegetation,0.032
+AnnualCrop,PermanentCrop,0.0311
+Pasture,HerbaceousVegetation,0.03
+HerbaceousVegetation,PermanentCrop,0.0222

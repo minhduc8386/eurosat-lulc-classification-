@@ -1,0 +1,10 @@
+{
+  "model": "resnet50v2_finetuned",
+  "params": 23585290,
+  "epochs_run": 10,
+  "best_epoch": 15,
+  "best_val_loss": 0.1493,
+  "best_val_accuracy": 0.9556,
+  "train_time_sec": 8121.3,
+  "learning_rate": 1e-05
+}

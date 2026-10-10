@@ -1,0 +1,4 @@
+model,params,epochs_run,best_epoch,best_val_loss,best_val_accuracy,train_time_sec,learning_rate,use_batchnorm,use_gap
+complex_cnn_v1,1244458,18,13,0.2585,0.9178,4223.4,0.001,True,True
+complex_cnn_no_bn,1240618,30,28,0.2439,0.92,5126.4,0.001,False,True
+complex_cnn_flatten,2227498,10,5,0.5805,0.7956,2412.3,0.001,True,False

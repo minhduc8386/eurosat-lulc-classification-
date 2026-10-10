@@ -1,0 +1,10 @@
+{
+  "model": "complex_cnn_flatten",
+  "params": 2227498,
+  "epochs_run": 10,
+  "best_epoch": 5,
+  "best_val_loss": 0.5805,
+  "best_val_accuracy": 0.7956,
+  "train_time_sec": 2412.3,
+  "learning_rate": 0.001
+}

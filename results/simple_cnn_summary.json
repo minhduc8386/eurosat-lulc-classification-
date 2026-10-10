@@ -1,0 +1,10 @@
+{
+  "model": "simple_cnn",
+  "params": 1626442,
+  "epochs_run": 19,
+  "best_epoch": 14,
+  "best_val_loss": 0.4999,
+  "best_val_accuracy": 0.8326,
+  "train_time_sec": 582.4,
+  "learning_rate": 0.001
+}

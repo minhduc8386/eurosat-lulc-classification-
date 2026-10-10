@@ -1,0 +1,10 @@
+{
+  "model": "complex_cnn_v1",
+  "params": 1244458,
+  "epochs_run": 18,
+  "best_epoch": 13,
+  "best_val_loss": 0.2585,
+  "best_val_accuracy": 0.9178,
+  "train_time_sec": 4223.4,
+  "learning_rate": 0.001
+}

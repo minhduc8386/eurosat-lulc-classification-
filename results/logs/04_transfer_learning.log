@@ -1,0 +1,88 @@
+X_train: (18900, 64, 64, 3) | Y_train: (18900, 10)
+X_val  : (4050, 64, 64, 3) | Y_val  : (4050, 10)
+Model: "resnet50v2_tl"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ data_augmentation (Sequential)  │ (None, 64, 64, 3)      │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ resizing (Resizing)             │ (None, 160, 160, 3)    │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ rescaling (Rescaling)           │ (None, 160, 160, 3)    │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ resnet50v2 (Functional)         │ (None, 5, 5, 2048)     │    23,564,800 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ global_average_pooling2d        │ (None, 2048)           │             0 │
+│ (GlobalAveragePooling2D)        │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 2048)           │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense (Dense)                   │ (None, 10)             │        20,490 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 23,585,290 (89.97 MB)
+ Trainable params: 20,490 (80.04 KB)
+ Non-trainable params: 23,564,800 (89.89 MB)
+Total parameters: 23,585,290 | Trainable (phase 1): 20,490
+Epoch 1/10
+296/296 - 557s - 2s/step - accuracy: 0.8358 - loss: 0.5294 - val_accuracy: 0.9054 - val_loss: 0.2844
+Epoch 2/10
+296/296 - 568s - 2s/step - accuracy: 0.9152 - loss: 0.2607 - val_accuracy: 0.9183 - val_loss: 0.2368
+Epoch 3/10
+296/296 - 666s - 2s/step - accuracy: 0.9262 - loss: 0.2272 - val_accuracy: 0.9215 - val_loss: 0.2266
+Epoch 4/10
+296/296 - 609s - 2s/step - accuracy: 0.9312 - loss: 0.2006 - val_accuracy: 0.9267 - val_loss: 0.2150
+Epoch 5/10
+296/296 - 610s - 2s/step - accuracy: 0.9378 - loss: 0.1852 - val_accuracy: 0.9281 - val_loss: 0.2093
+Epoch 6/10
+296/296 - 619s - 2s/step - accuracy: 0.9367 - loss: 0.1802 - val_accuracy: 0.9289 - val_loss: 0.2014
+Epoch 7/10
+296/296 - 596s - 2s/step - accuracy: 0.9390 - loss: 0.1767 - val_accuracy: 0.9311 - val_loss: 0.2011
+Epoch 8/10
+296/296 - 600s - 2s/step - accuracy: 0.9449 - loss: 0.1636 - val_accuracy: 0.9353 - val_loss: 0.1997
+Epoch 9/10
+296/296 - 562s - 2s/step - accuracy: 0.9451 - loss: 0.1614 - val_accuracy: 0.9333 - val_loss: 0.1961
+Epoch 10/10
+296/296 - 549s - 2s/step - accuracy: 0.9469 - loss: 0.1531 - val_accuracy: 0.9326 - val_loss: 0.1983
+{
+  "model": "resnet50v2_phase1",
+  "params": 23585290,
+  "epochs_run": 10,
+  "best_epoch": 9,
+  "best_val_loss": 0.1961,
+  "best_val_accuracy": 0.9333,
+  "train_time_sec": 5950.9,
+  "learning_rate": 0.001
+}
+Trainable (phase 2): 14,970,890 parameters (stage conv5 + new classifier)
+Epoch 11/20
+296/296 - 829s - 3s/step - accuracy: 0.9522 - loss: 0.1365 - val_accuracy: 0.9464 - val_loss: 0.1630
+Epoch 12/20
+296/296 - 799s - 3s/step - accuracy: 0.9672 - loss: 0.0923 - val_accuracy: 0.9531 - val_loss: 0.1625
+Epoch 13/20
+296/296 - 826s - 3s/step - accuracy: 0.9756 - loss: 0.0701 - val_accuracy: 0.9528 - val_loss: 0.1497
+Epoch 14/20
+296/296 - 771s - 3s/step - accuracy: 0.9820 - loss: 0.0525 - val_accuracy: 0.9538 - val_loss: 0.1539
+Epoch 15/20
+296/296 - 817s - 3s/step - accuracy: 0.9850 - loss: 0.0450 - val_accuracy: 0.9556 - val_loss: 0.1493
+Epoch 16/20
+296/296 - 825s - 3s/step - accuracy: 0.9888 - loss: 0.0345 - val_accuracy: 0.9595 - val_loss: 0.1504
+Epoch 17/20
+296/296 - 828s - 3s/step - accuracy: 0.9910 - loss: 0.0276 - val_accuracy: 0.9598 - val_loss: 0.1510
+Epoch 18/20
+296/296 - 817s - 3s/step - accuracy: 0.9928 - loss: 0.0220 - val_accuracy: 0.9573 - val_loss: 0.1587
+Epoch 19/20
+296/296 - 797s - 3s/step - accuracy: 0.9950 - loss: 0.0175 - val_accuracy: 0.9563 - val_loss: 0.1753
+Epoch 20/20
+296/296 - 808s - 3s/step - accuracy: 0.9958 - loss: 0.0127 - val_accuracy: 0.9595 - val_loss: 0.1683
+{
+  "model": "resnet50v2_finetuned",
+  "params": 23585290,
+  "epochs_run": 10,
+  "best_epoch": 15,
+  "best_val_loss": 0.1493,
+  "best_val_accuracy": 0.9556,
+  "train_time_sec": 8121.3,
+  "learning_rate": 1e-05
+}
+Saved figures/resnet50v2_curve.png
+Best validation accuracy – phase 1: 0.9353 | phase 2: 0.9598

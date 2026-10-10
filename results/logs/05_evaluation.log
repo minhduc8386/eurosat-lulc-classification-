@@ -1,0 +1,87 @@
+X_test: (4050, 64, 64, 3) | y_test: (4050,)
+
+===== Simple CNN =====
+                      precision    recall  f1-score   support
+
+          AnnualCrop     0.8950    0.8333    0.8631       450
+              Forest     0.9367    0.9533    0.9449       450
+HerbaceousVegetation     0.7371    0.8222    0.7773       450
+             Highway     0.6650    0.7040    0.6839       375
+          Industrial     0.8458    0.9360    0.8886       375
+             Pasture     0.7704    0.8167    0.7929       300
+       PermanentCrop     0.7969    0.5547    0.6541       375
+         Residential     0.9600    0.9067    0.9326       450
+               River     0.7070    0.8107    0.7553       375
+             SeaLake     0.9859    0.9311    0.9577       450
+
+            accuracy                         0.8328      4050
+           macro avg     0.8300    0.8269    0.8250      4050
+        weighted avg     0.8378    0.8328    0.8321      4050
+
+
+===== Complex CNN =====
+                      precision    recall  f1-score   support
+
+          AnnualCrop     0.9036    0.9378    0.9204       450
+              Forest     0.9754    0.9689    0.9721       450
+HerbaceousVegetation     0.8680    0.9356    0.9005       450
+             Highway     0.8965    0.8773    0.8868       375
+          Industrial     0.9875    0.8427    0.9094       375
+             Pasture     0.9574    0.9000    0.9278       300
+       PermanentCrop     0.9020    0.8347    0.8670       375
+         Residential     0.9151    0.9822    0.9475       450
+               River     0.8980    0.9387    0.9179       375
+             SeaLake     0.9674    0.9889    0.9780       450
+
+            accuracy                         0.9249      4050
+           macro avg     0.9271    0.9207    0.9227      4050
+        weighted avg     0.9264    0.9249    0.9246      4050
+
+
+===== ResNet50V2 =====
+                      precision    recall  f1-score   support
+
+          AnnualCrop     0.9551    0.9444    0.9497       450
+              Forest     0.9712    0.9756    0.9734       450
+HerbaceousVegetation     0.9259    0.9444    0.9351       450
+             Highway     0.9566    0.9413    0.9489       375
+          Industrial     0.9788    0.9840    0.9814       375
+             Pasture     0.9422    0.9233    0.9327       300
+       PermanentCrop     0.9278    0.9253    0.9266       375
+         Residential     0.9866    0.9844    0.9855       450
+               River     0.9478    0.9680    0.9578       375
+             SeaLake     0.9933    0.9889    0.9911       450
+
+            accuracy                         0.9595      4050
+           macro avg     0.9585    0.9580    0.9582      4050
+        weighted avg     0.9596    0.9595    0.9595      4050
+
+
+=== Test-set comparison ===
+      model  accuracy  macro_precision  macro_recall  macro_f1   params  train_time_min
+ Simple CNN    0.8328           0.8300        0.8269    0.8250  1626442          9.7067
+Complex CNN    0.9249           0.9271        0.9207    0.9227  1240618         85.4400
+ ResNet50V2    0.9595           0.9585        0.9580    0.9582 23585290        234.5367
+
+=== Per-class F1 ===
+                      Simple CNN  Complex CNN  ResNet50V2
+AnnualCrop                0.8631       0.9204      0.9497
+Forest                    0.9449       0.9721      0.9734
+HerbaceousVegetation      0.7773       0.9005      0.9351
+Highway                   0.6839       0.8868      0.9489
+Industrial                0.8886       0.9094      0.9814
+Pasture                   0.7929       0.9278      0.9327
+PermanentCrop             0.6541       0.8670      0.9266
+Residential               0.9326       0.9475      0.9855
+River                     0.7553       0.9179      0.9578
+SeaLake                   0.9577       0.9780      0.9911
+
+=== Most confused class pairs – ResNet50V2 ===
+          True class         Predicted as   Rate
+             Highway                River 0.0373
+       PermanentCrop HerbaceousVegetation 0.0320
+          AnnualCrop        PermanentCrop 0.0311
+             Pasture HerbaceousVegetation 0.0300
+HerbaceousVegetation        PermanentCrop 0.0222
+
+Done: results/ and figures/ updated.
